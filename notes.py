@@ -1,12 +1,6 @@
 from numba import cuda
 import numpy as np
 
-# Numba CUDA target is three things:
-
-# 1. A NumPy-like array library backed by CUDA
-# 2. A Python-to-PTX compiler that uses NVVM
-# 3. A Python interface to the CUDA driver API
-
 
 # A simple kernel
 
@@ -61,7 +55,6 @@ dg.render()  # or just dg in notebook
 
 interp.dfa.infos
 
-
 # Numba IR
 
 ir.dump()
@@ -107,7 +100,7 @@ from numba import float32, int32, void                    # noqa
 with global_compiler_lock:
     argtys = (float32[:], int32, float32[:], float32[:])
     returnty = void
-    cres = compile_cuda(axpy.py_func, void, argtys)
+    cres = compile_cuda(axpy.py_func, void, argtys, debug=False, inline=False)
     fname = cres.fndesc.llvm_func_name
     lib, kernel = cres.target_context.prepare_cuda_kernel(cres.library, fname,
                                                           cres.signature.args,
@@ -201,11 +194,12 @@ def make_array_args(arr):
 
     return args
 
+
 # Create the list of arguments - we compiled for float32[:], int32, float32[:],
 # float32[:]
 args = []
 args += make_array_args(d_r)
-args += [ctypes.c_int(13)]  
+args += [ctypes.c_int(13)]
 args += make_array_args(d_x)
 args += make_array_args(d_y)
 
