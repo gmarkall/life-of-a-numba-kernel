@@ -6,9 +6,9 @@ of Numba internals to illustrate how the different parts of the pipeline work.
 
 Contents:
 
-- [Life of a Numba Kernel](Life%20of%20a%20Numba%20Kernel.ipynb): The notebook ready to
-  execute.
-- [Life of a Numba Kernel with output](Life of a Numba Kernel - with- output.ipynb):
+- [Life of a Numba Kernel](Life%20of%20a%20Numba%20Kernel.ipynb): The notebook
+  ready to execute.
+- [Life of a Numba Kernel with output](Life%20of%20a%20Numba%20Kernel%20-%20with-%20output.ipynb):
   The notebook with output - good for viewing without needing to compile /
   execute, perhaps if you don't have a CUDA device or installation of Numba
   handy.
