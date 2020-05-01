@@ -6,7 +6,7 @@ of Numba internals to illustrate how the different parts of the pipeline work.
 
 Contents:
 
-- [Life of a Numba Kernel](Life of a Numba Kernel.ipynb): The notebook ready to
+- [Life of a Numba Kernel]("Life of a Numba Kernel.ipynb"): The notebook ready to
   execute.
 - [Life of a Numba Kernel with output](Life of a Numba Kernel - with- output.ipynb):
   The notebook with output - good for viewing without needing to compile /
